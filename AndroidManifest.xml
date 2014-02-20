@@ -75,10 +75,11 @@
                        android:resource="@raw/recent_changes" />
                        
         <activity android:name=".FileManagerActivity" android:label="@string/app_name">
-            <intent-filter>
+            <!--AJM: Library doesn't need a launcher-->
+<!--            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter>-->
             <intent-filter>
                 <action android:name="org.openintents.action.PICK_FILE"/>
                 <category android:name="android.intent.category.DEFAULT" />
@@ -114,7 +115,8 @@
         
         <activity android:name=".PreferenceActivity" android:label="@string/settings" />
 
-    <provider android:name=".FileManagerProvider" android:authorities="org.openintents.filemanager"></provider>
+        <!--AJM: provider isn't needed in a library sense-->
+    <!--<provider android:name=".FileManagerProvider" android:authorities="org.openintents.filemanager"></provider>-->
 
 		<!-- Activities from OI Distribution Library -->
         <!--<activity android:name="org.openintents.distribution.EulaActivity" />-->
