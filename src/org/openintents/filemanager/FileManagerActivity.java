@@ -28,7 +28,6 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.openintents.distribution.DistributionLibraryListActivity;
 import org.openintents.filemanager.util.FileUtils;
 import org.openintents.filemanager.util.MimeTypeParser;
 import org.openintents.filemanager.util.MimeTypes;
@@ -36,8 +35,10 @@ import org.openintents.intents.FileManagerIntents;
 import org.openintents.util.MenuIntentOptionsWithIcons;
 import org.xmlpull.v1.XmlPullParserException;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
+import android.app.ListActivity;
 import android.content.ActivityNotFoundException;
 import android.content.ComponentName;
 import android.content.Context;
@@ -74,7 +75,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class FileManagerActivity extends DistributionLibraryListActivity
+public class FileManagerActivity extends ListActivity
 {
 	private static final String TAG = "FileManagerActivity";
 
@@ -230,14 +231,6 @@ public class FileManagerActivity extends DistributionLibraryListActivity
 	{
 		super.onCreate(icicle);
 
-		mDistribution.setFirst(MENU_DISTRIBUTION_START,
-				DIALOG_DISTRIBUTION_START);
-
-		/*
-		 * // Check whether EULA has been accepted // or information about new
-		 * version can be presented. if (mDistribution.showEulaOrNewVersion()) {
-		 * return; }
-		 */
 		currentHandler = new Handler()
 		{
 			@Override
@@ -1044,7 +1037,7 @@ public class FileManagerActivity extends DistributionLibraryListActivity
 				.getAbsolutePath();
 	}
 
-	@Override
+/*	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		super.onCreateOptionsMenu(menu);
@@ -1078,9 +1071,9 @@ public class FileManagerActivity extends DistributionLibraryListActivity
 		mDistribution.onCreateOptionsMenu(menu);
 
 		return true;
-	}
+	}*/
 
-	@Override
+/*	@Override
 	public boolean onPrepareOptionsMenu(Menu menu)
 	{
 		super.onPrepareOptionsMenu(menu);
@@ -1148,7 +1141,7 @@ public class FileManagerActivity extends DistributionLibraryListActivity
 		}
 		return super.onOptionsItemSelected(item);
 
-	}
+	}*/
 
 	private void showSettings()
 	{
