@@ -10,13 +10,6 @@ buildscript {
 
 apply plugin: 'android-library'
 
-/*dependencies {
-    repositories {
-        mavenCentral()
-    }
-    compile project(':oIDistributionLibrary')
-}*/
-
 android {
 	compileSdkVersion 19
 	buildToolsVersion "19.1.0"
