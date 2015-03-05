@@ -16,7 +16,6 @@
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.openintents.filemanager"
-    android:installLocation="auto"
 	android:versionName="1.1.6"
 	android:versionCode="17">
 	<!-- History: 
@@ -34,13 +33,6 @@
 	[1] 1.0.0: 2008-12-10
 	-->
 
-        <uses-sdk android:minSdkVersion="3"
-            android:targetSdkVersion="9" />
-        <!-- If targetSdkVersion is increased from 4 to 5 or higher,
-        	the following needs to be adjusted:
-             * FileManagerActivity: onKeyDown(): New way how "back" key is handled.
-            NOTE: Tested on target=9, and it works both on Android 2.3 and Android 1.6. -->
-
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 
     <uses-feature android:name="android.hardware.touchscreen" android:required="false"/>
@@ -53,7 +45,9 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>-->
-            <intent-filter>
+
+            <!--AJM: Simplify by calling directly, no need for intents -->
+<!--            <intent-filter>
                 <action android:name="org.openintents.action.PICK_FILE"/>
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="file" />
@@ -78,12 +72,12 @@
                 <category android:name="android.intent.category.OPENABLE" />
             </intent-filter>
 
-		    <!-- Filter for a multi select feature -->
+		    &lt;!&ndash; Filter for a multi select feature &ndash;&gt;
    			<intent-filter>
                 <action android:name="org.openintents.action.MULTI_SELECT"/>
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="file" />
-            </intent-filter>
+            </intent-filter>-->
         </activity>
 </application>
 </manifest>
